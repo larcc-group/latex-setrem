@@ -1,0 +1,3 @@
+\ProvidesFile{diss.def}[Standard for SETREM Reports]
+\newcommand{\titlepagespecificinfo}{\dissspecificinfo}
+\def\@cipspecificinfo{\dissname}

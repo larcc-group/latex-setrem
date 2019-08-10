@@ -1,0 +1,21 @@
+\NeedsTeXFormat{LaTeX2e}
+\RequirePackage{graphicx}
+
+\def\setrem{Sociedade Educacional Tr{\^e}s de Maio}
+\def\faculsetrem{Faculdade Tr{\^e}s de Maio}
+\def\ctrc{Course}
+
+%       \silogo         % tamanho normal (fonte equiv. a 10pt)
+%       \silogo[2]      % com o dobro do tamanho
+%       \silogo[.5]     % com metade do tamanho
+%
+
+\DeclareRobustCommand{\rclogo}[1][1]{
+        \includegraphics[scale=#1]{template/rclogo.jpg}
+}
+\DeclareRobustCommand{\silogo}[1][1]{
+        \includegraphics[scale=#1]{template/silogo.jpg}
+}
+\DeclareRobustCommand{\eclogo}[1][1]{
+        \includegraphics[scale=#1]{template/eclogo.png}
+}

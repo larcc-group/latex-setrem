@@ -1,0 +1,222 @@
+\documentclass[diss]{template/setrem}
+
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[table]{xcolor}
+\usepackage{multicol}
+\usepackage{array} % for defining a new column type
+\usepackage{varwidth} %for the varwidth minipage environment
+\usepackage{float}
+\usepackage{todonotes}
+\usepackage{subfigure}
+\usepackage{graphicx,url}
+\usepackage{lipsum} %generate fake text
+
+\makeatletter
+\g@addto@macro{\UrlBreaks}{\UrlOrds}
+\makeatother
+
+
+\usepackage{setspace}
+\usepackage{amssymb}
+\usepackage{colortbl}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{verbatim}
+\usepackage{scrextend}
+\usepackage{csvsimple}
+\usepackage{glossaries}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{threeparttablex}
+\usepackage{lscape}
+\usepackage{colortbl}
+\usepackage{booktabs}
+
+% Coloca a contagem das figuras sequenciais sem considerar capítulos
+\usepackage{chngcntr}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{datatool}
+\usepackage{seqsplit}
+\usepackage[toc,page]{appendix}
+
+% The package option longtable redefines the \cline macro to work around a bug in longtable
+\usepackage{longtable}
+\usepackage{multirow}
+\makeatletter
+\def\@cline#1-#2\@nil{%
+  \omit
+  \@multicnt#1%
+  \advance\@multispan\m@ne
+  \ifnum\@multicnt=\@ne\@firstofone{&\omit}\fi
+  \@multicnt#2%
+  \advance\@multicnt-#1%
+  \advance\@multispan\@ne
+  \leaders\hrule\@height\arrayrulewidth\hfill
+  \cr
+  \noalign{\nobreak\vskip-\arrayrulewidth}}
+\makeatother
+
+
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+
+\definecolor{color_keywords}{rgb}{0.0, 0.0, 0.44}
+\definecolor{color_mykeyword}{RGB}{10, 100, 112}
+
+\definecolor{myblue}{rgb}{0,0.3,0.9}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\definecolor{mygray2}{rgb}{0.2,0.2,0.2}
+\definecolor{mygray3}{rgb}{0.4,0.4,0.4}
+
+
+
+\lstdefinestyle{mycode}{ %
+  %backgroundcolor=\color{yellow!05},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+  basicstyle=\linespread{1}\small,        % the size of the fonts that are used for the code \footnotesize
+  %lineskip={-1pt},
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=t,                    % sets the caption-position to top
+  commentstyle=\color{gray!90},    % comment style
+%  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=l,                    % adds a frame around the code (bt,l,r) single
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{black}\bf,       % keyword style
+  language=C++,                     % the language of the code
+ % morekeywords={input,output,parallel_activity,stream_producer},            % if you want to add more keywords to the set
+  keywordstyle=[2]{\color{blue}\bf},
+ % keywords=[3]{serial_in_order, parallel, pipeline, run, add_filter, task_scheduler_init},
+ % keywordstyle=[3]{\color{blue!70!green}\bf},
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{red},     % string literal style
+  tabsize=1,                       % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+% Negrito no título do listing
+\captionsetup[lstlisting]{font={bf},labelfont=bf}
+
+%Ajusta a contagem do listing
+\AtBeginDocument{% the counter is defined later
+  \counterwithout{lstlisting}{chapter}%
+}
+\makeatletter
+\renewcommand{\l@lstlisting}[2]{%
+  \@dottedtocline{1}{0em}{1.5em}{\lstlistingname\ #1}{#2}%
+}
+\makeatother
+
+
+\title{your title here}
+\author{LastName}{FirstName}
+%optional
+\author{LastName}{FirstName}
+\advisor[Dr.]{LastName}{FirstName}
+
+% Place where the undergraduate thesis will be made.
+\location{Três de Maio}{RS}
+
+% Date of undergraduate thesis development/presentation.
+\date{Agosto}{2019}
+
+% Course name - defined in setremdefs.sty.
+\course{\ctrc}
+%\vspace{-4cm}
+
+% Header image of the cover.
+
+%% Sistemas de Informação
+\courseheader{\silogo[1]}
+
+%% Redes de Computadores
+%\courseheader{\rclogo[1]}
+
+%% Engenharia de Computação
+%\courseheader{\eclogo[1]}
+
+\docname{Undergraduate Thesis of Bachelor of Information Systems - Três de Maio Faculty - SETREM}
+
+
+
+\begin{document}
+
+
+\maketitle
+\input{apro.tex}
+
+\keyword{Information Systems}
+\keyword{Deep Learning}
+\keyword{Agriculture}
+\keyword{Systematic Literature Review}
+
+\begin{abstract}
+\noindent 
+
+The abstract goes here ...
+
+\end{abstract}
+
+\keywordenglish{Sistemas de Informação}
+\keywordenglish{Deep Learning}
+\keywordenglish{Agricultura}
+\keywordenglish{Revisão Sistemática da Literatura}
+
+\begin{resumo}
+\noindent
+
+O resumo vai aqui...
+
+
+\end{resumo}
+
+\begin{singlespaced}
+\listoffigures
+\end{singlespaced}
+
+\begin{singlespaced}
+\listoftables
+\end{singlespaced}
+
+
+% \listofmyequations
+
+\begin{listofabbrv}{OR-AC-GAN} % Put the largest abbreviation.
+\setstretch{1}
+\item[ACM] {Association for Computing Machinery}
+\item[AWS] {Amazon Web Services}
+\item[IBGE] {Brazilian Institute of Geography and Statistics}
+\item[IEEE] {Institute of Electrical and Electronics Engineers}
+\item[IoT] {Internet of Things}
+\end{listofabbrv}
+
+% 
+\tableofcontents
+
+\input{intro.tex}
+\input{cap1.tex}
+\input{cap2.tex}
+\input{cap3.tex}
+\input{concl.tex}
+
+
+\bibliographystyle{template/abnt}
+%% para português
+%\bibliographystyle{template/abnt-pt}
+\bibliography{bib/bibliography}
+
+\end{document}
