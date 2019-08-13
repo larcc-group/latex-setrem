@@ -1,6 +1,6 @@
 %==============================================================================
 % abnt.bst
-% Estilo BibTeX de formata��o de refer�ncias bibliogr�ficas no padr�o ABNT
+% Estilo BibTeX de formatação de referências bibliográficas no padrão ABNT
 %
 % UFRGS TeX Users Group
 % Informatics Institute --- UFRGS
@@ -28,7 +28,7 @@
 %==============================================================================
 
 %==============================================================================
-% Defini��o dos campos das entradas
+% Definição dos campos das entradas
 %==============================================================================
 ENTRY
 { 
@@ -508,7 +508,7 @@ FUNCTION {format.entrytitle}
 }
 
 %==============================================================================
-% Converte a edicao literal ("First", "Second", etc., que � o padr�o indicado
+% Converte a edicao literal ("First", "Second", etc., que é o padrão indicado
 % no manual do BibTeX) para o algarismo correspondente. Recebe na pilha o
 % string e devolve o numero.
 %==============================================================================
@@ -692,7 +692,7 @@ FUNCTION {format.howpublished}
 {
 	howpublished empty$
 		{""}
-		{howpublished}
+		{howpublished "." *}
 	if$
 }
 
@@ -895,14 +895,14 @@ FUNCTION {format.publication}
 			format.publisher empty$
 				{":~s.n.]" *}
 				{"]: " format.publisher * *}
-			if$ add.year add.to.item
+			if$ add.to.item
 		}
 		{
 			format.address
 			format.publisher empty$
 				{": [s.n.]" *}
 				{": " format.publisher * *}
-			if$ add.year add.to.item
+			if$ add.to.item
 		}
 	if$
 }
@@ -912,13 +912,13 @@ FUNCTION {format.proceedings.publication}
 	publisher empty$
 		{"[S.l.:~s.n.]"}
 		{publisher comma.to.colon}
-	if$ add.year
+	if$ 
 }
 
 FUNCTION {format.misc.publication}
 {
 	publisher empty$ {
-		format.address add.year
+		format.address
 	}{
 		format.publication
 	} if$
@@ -965,6 +965,7 @@ FUNCTION {article}
 {
 	""
 	format.author add.to.item
+	format.year add.to.item
 	#0 title format.title emphasize add.to.item
 	journal
 		address empty$ {
@@ -972,7 +973,7 @@ FUNCTION {article}
 		}{
 			add.address
 		} if$
-		add.volume add.number add.pages add.month.year add.to.item
+		add.volume add.number add.pages add.to.item
 	format.note add.to.item
 
 	write.item
@@ -985,6 +986,7 @@ FUNCTION {book}
 		{format.author}
 		{format.editor}
 	if$ add.to.item
+	format.year add.to.item
 	#1 title format.title add.to.item
 	format.edition add.to.item
 	format.publication add.to.item
@@ -1001,6 +1003,7 @@ FUNCTION {inbook}
 		{format.author}
 		{format.editor}
 	if$ add.to.item
+	format.year add.to.item
 	#1 title format.title add.to.item
 	format.edition add.to.item
 	format.publication add.to.item
@@ -1014,6 +1017,7 @@ FUNCTION {incollection}
 {
 	""
 	format.author add.to.item
+	format.year add.to.item
 	#0 title format.title add.to.item
 	"In:"
 		editor empty$
@@ -1033,6 +1037,7 @@ FUNCTION {inproceedings}
 {
 	""
 	format.author add.to.item
+	format.year add.to.item
 	#0 title format.title emphasize add.to.item
 	" In: " booktitle format.proceedings.booktitle * *
 	format.proceedings.publication add.to.item
@@ -1049,6 +1054,7 @@ FUNCTION {manual}
 		{format.entrytitle add.to.item}
 		{
 			format.author add.to.item
+			format.year add.to.item
 			#1 title format.title add.to.item
 		}
 	if$
@@ -1065,6 +1071,7 @@ FUNCTION {mastersthesis}
 {
 	""
 	format.author add.to.item
+	format.year add.to.item
 	#1 title format.title add.to.item
 	format.year add.to.item
 	format.totalpages add.to.item
@@ -1088,6 +1095,7 @@ FUNCTION {misc}
 		}
 		{
 			format.author add.to.item
+			format.year add.to.item
 			title empty$
 				'skip$
 				{#1 title format.title add.to.item}
@@ -1098,7 +1106,7 @@ FUNCTION {misc}
 		format.misc.publication add.to.item
 		format.complementary.data.with.totalpages add.to.item
 	}{
-		add.howpublished format.note  add.to.item
+		format.note add.howpublished add.to.item
 	} if$
 
 	write.item
@@ -1108,6 +1116,7 @@ FUNCTION {phdthesis}
 {
 	""
 	format.author add.to.item
+	format.year add.to.item
 	#1 title format.title add.to.item
 	format.year add.to.item
 	format.totalpages add.to.item
@@ -1320,7 +1329,7 @@ FUNCTION {get.labelstring.all}
 }
 
 %==============================================================================
-% Constru��o dos labels
+% Construção dos labels
 %==============================================================================
 FUNCTION {prepare.label.sorting}
 {
