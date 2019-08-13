@@ -33,7 +33,7 @@
 \RequirePackage{lastpage}
 \RequirePackage{indentfirst}
 \RequirePackage{template/setremdefs}
-\usepackage[square,sort,comma,numbers]{natbib}
+\usepackage[square,sort,comma]{natbib}
 \RequirePackage{setspace}
 \RequirePackage{titlesec}
 \RequirePackage{ragged2e}
