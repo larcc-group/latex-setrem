@@ -20,7 +20,8 @@
 
 
 
-\LoadClass[12pt,a4paper,twoside]{report}
+%\LoadClass[12pt,a4paper,twoside]{report}
+\LoadClass[12pt,onecolumn,titlepage,a4paper,openright,final]{report}[2007/10/19]
 
 %the last appearing between [] will be set the default language
 \RequirePackage[brazilian,english]{babel}
@@ -72,6 +73,7 @@
 \RequirePackage{blindtext}
 
 \RequirePackage[justification=justified,singlelinecheck=false]{caption}
+
 
 %==============================================================================
 % Text
@@ -355,6 +357,19 @@
         \@starttoc{toc}\@aftertoctrue%
 }
 
+% \renewcommand\listoffigures{%
+%         \addcontentsline{lof}{figure}{\figurename #1 }
+%         \chapter*{\listfigurename
+%         \@mkboth{%
+%            \MakeUppercase\listfigurename}{\MakeUppercase\listfigurename}}
+%     \@starttoc{lof}%
+% }
+% \renewcommand\listoftables{%
+%         \chapter*{\listtablename
+%         \@mkboth{%
+%            \MakeUppercase\listtablename}{\MakeUppercase\listtablename}}
+%     \@starttoc{lot}%
+% }
 %==============================================================================
 % Definitions of abbreviation and Symbol lists
 %==============================================================================
@@ -429,6 +444,7 @@
     
 }
 
+
 %==============================================================================
 % Formating the chapters
 % \@chapter and \@schapter are redefined  so that page number is correct
@@ -441,8 +457,8 @@
 \def\@chapapp{\chaptername}
 \def\@chapter[#1]#2{%
         \refstepcounter{chapter}%
-        \addcontentsline{toc}{chapter}{\@chapapp\thechapter: #1}%
-        %\addtocontents{lof}{\protect\addvspace{10\p@}}%
+        \addcontentsline{toc}{chapter}{\thechapter\ \ #1}%
+       % \addtocontents{lof}{\protect\addvspace{10\p@}}%
         %\addtocontents{lot}{\protect\addvspace{10\p@}}%
         
        
@@ -458,7 +474,7 @@
         \vspace*{3.2cm}
         \reset@font\noindent{
         		\ii@chapterfont\sffamily\textbf{
-        				\MakeUppercase{\@chapapp}\thechapter:\hspace{1em}\MakeUppercase{#1}
+        				\MakeUppercase{}\thechapter\hspace{1em}\MakeUppercase{#1}
         		}\par
         }
         %\addvspace{42pt}
@@ -550,26 +566,25 @@
 %==============================================================================
 % Redefining the content of Figure and Table list
 %==============================================================================
-\newif\if@captionlisting\@captionlistingtrue
-\long\def\@caption#1[#2]#3{%
-  %\par
-  \if@captionlisting%
+ \newif\if@captionlisting\@captionlistingtrue
+ \long\def\@caption#1[#2]#3{%
+   %\par
+   \if@captionlisting%
         
-    \addcontentsline{\csname ext@#1\endcsname}{#1}%
+     \addcontentsline{\csname ext@#1\endcsname}{#1}%
         {\protect\numberline{\csname fnum@#1\endcsname:}{\ignorespaces #2}}%
-  \fi%
-  \begingroup
-  	%\setstretch{1.0}
-    \@parboxrestore
-    \if@minipage
-      \@setminipage
-    \fi
-    \normalsize
-    \@makecaption{\csname fnum@#1\endcsname}{\ignorespaces #3}
-  \endgroup%
-}
-% \renewcommand*{\l@fig}{\@dottedtocline{1}{0em}{5.5em}}
-\let\l@table\l@figure
+   \fi%
+   \begingroup
+   	%\setstretch{1.0}
+     \@parboxrestore
+     \if@minipage
+       \@setminipage
+     \fi
+     \normalsize
+     \@makecaption{\csname fnum@#1\endcsname}{\ignorespaces #3}
+   \endgroup%
+ }
+
 
 \newcommand{\source}[1]{
         \flushleft{
@@ -648,3 +663,7 @@
 \captionsetup[longtable]{font={small, bf}}
 \captionsetup[table]{font={bf}}
 \captionsetup[listing]{font={bf}}
+
+
+ 
+
