@@ -46,6 +46,8 @@
 % The package option longtable redefines the \cline macro to work around a bug in longtable
 \usepackage{longtable}
 \usepackage{multirow}
+\usepackage{titletoc}
+
 \makeatletter
 \def\@cline#1-#2\@nil{%
   \omit
@@ -151,7 +153,20 @@
 
 \docname{Undergraduate Thesis of Bachelor of Information Systems - Três de Maio Faculty - SETREM}
 
+% Mostra a lista de tabelas e figuras com os prefixos corretos.
+\titlecontents{table}
+  [0em]
+  {}
+  {\tablename\enspace\thecontentslabel\enspace--\enspace}
+  {}
+  {\titlerule*[.5pc]{.}\contentspage}
 
+\titlecontents{figure}
+  [0em]
+  {}
+  {\figurename\enspace\thecontentslabel\enspace--\enspace}
+  {}
+  {\titlerule*[.5pc]{.}\contentspage}
 
 \begin{document}
 
