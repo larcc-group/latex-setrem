@@ -35,4 +35,4 @@ no Linux **Ubuntu**
 - Acessar [Overleaf](https://www.overleaf.com) e fazer login.
 - Clicar em `Novo Projeto` e selecionar a opção `Upload Projeto`.
 - Selecionar o arquivo do projeto baixado.
-- Cique no botão compilar.
+- Clique no botão compilar.
