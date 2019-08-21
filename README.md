@@ -6,7 +6,7 @@ O repositório possui um template LaTeX seguindo os padrões da SETREM. As intru
 
 # Direitos do LARCC
 
-O repositório é mantido pelo [LARCC](http://larcc.setrem.com.br) e os direitos do repositório são reservados ao LARCC. Favor usar as Issues para reportar eventuais problemas. A equipe do LARCC está disponvel para auxiliar e melhorar questões relativas ao código da template.
+O repositório é mantido pelo [LARCC](http://larcc.setrem.com.br) e os direitos do repositório são reservados ao LARCC. Favor usar as Issues para reportar eventuais problemas. A equipe do LARCC está disponível para auxiliar e melhorar questões relativas ao código da template.
 
 # Contato
 
