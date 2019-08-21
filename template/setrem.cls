@@ -34,7 +34,8 @@
 \RequirePackage{lastpage}
 \RequirePackage{indentfirst}
 \RequirePackage{template/setremdefs}
-\usepackage[square,sort,comma]{natbib}
+\RequirePackage{natbib}
+% \usepackage[square,sort,comma]{natbib}
 \RequirePackage{setspace}
 \RequirePackage{titlesec}
 \RequirePackage{ragged2e}
@@ -247,19 +248,19 @@
 \newcommand{\thetitlepage}{%
     % \noindent{\@courseheader}
     % Header of the course
-    \noindent\raisebox{5mm}[0pt][0pt]{\rlap{\makebox[\textwidth][c]{\@courseheader}}}
+    \noindent\raisebox{-7mm}[0pt][0pt]{\rlap{\makebox[\textwidth][c]{\@courseheader}}}
     \begin{center}
 				
 				
 				% Space between the authors
-				\vspace{1cm}
+				\vspace{2.63cm}
 				
 				% Authors
 				\textbf{\MakeUppercase{\@authora}}\\
 				\@ifundefined{@authorb}{}{\MakeUppercase{\textbf{\@authorb}}\\}%
-				\@ifundefined{@authorc}{}{\MakeUppercase{\textbf{\@authorc}}\\}%
-				\@ifundefined{@authord}{}{\MakeUppercase{\textbf{\@authord}}\\}%
-				\vspace*{\fill}
+				% \@ifundefined{@authorc}{}{\MakeUppercase{\textbf{\@authorc}}\\}%
+				% \@ifundefined{@authord}{}{\MakeUppercase{\textbf{\@authord}}\\}%
+				\vspace*{6.4cm}
 				
 				% Title
 				{\textbf{\MakeUppercase{\@title}}\par}
