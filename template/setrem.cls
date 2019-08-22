@@ -590,7 +590,7 @@
 \newcommand{\source}[1]{
         \flushleft{
     		\@setfontsize\normalsize{10pt}{20}
-            {Source:} #1
+            {Fonte:} #1
         }
 }
 
