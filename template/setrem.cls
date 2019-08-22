@@ -247,20 +247,24 @@
 \newcommand{\thetitlepage}{%
     % \noindent{\@courseheader}
     % Header of the course
-    \noindent\raisebox{5mm}[0pt][0pt]{\rlap{\makebox[\textwidth][c]{\@courseheader}}}
+    \noindent\raisebox{-7mm}[0pt][0pt]{\rlap{\makebox[\textwidth][c]{\@courseheader}}}
     \begin{center}
 				
 				
 				% Space between the authors
-				\vspace{1cm}
+				\vspace{2.63cm}
 				
 				% Authors
 				\textbf{\MakeUppercase{\@authora}}\\
 				\@ifundefined{@authorb}{}{\MakeUppercase{\textbf{\@authorb}}\\}%
-				\@ifundefined{@authorc}{}{\MakeUppercase{\textbf{\@authorc}}\\}%
-				\@ifundefined{@authord}{}{\MakeUppercase{\textbf{\@authord}}\\}%
-				\vspace*{\fill}
-				
+				% \@ifundefined{@authorc}{}{\MakeUppercase{\textbf{\@authorc}}\\}%
+				% \@ifundefined{@authord}{}{\MakeUppercase{\textbf{\@authord}}\\}%
+                                
+                                % two authors
+				\vspace*{6.4cm}
+                                % one author
+				% \vspace*{7.2cm}
+                                
 				% Title
 				{\textbf{\MakeUppercase{\@title}}\par}
 				\vfill
@@ -277,16 +281,17 @@
 \newcommand{\@makecippage}{%
     \noindent
     \begin{center}
+				\vspace*{0cm}
 				\textbf{\MakeUppercase{\@authora}\\}
 				\textbf{\@ifundefined{@authorb}{}{\MakeUppercase{\@authorb}\\}}%
 				\textbf{\@ifundefined{@authorc}{}{\MakeUppercase{\@authorc}\\}}%
 				\textbf{\@ifundefined{@authord}{}{\MakeUppercase{\@authord}\\}}%
-				\vspace*{\fill}
+				\vspace*{2.4cm}
 				
 				\textbf{\MakeUppercase{\@title}}\\
 				 \end{center}
 				 
-				\vspace*{\fill}
+				\vspace*{0.9cm}
 				\begin{flushright}
 				\hspace{10cm} \begin{minipage}[t][4cm][b]{0,4\textwidth}
 				% 
@@ -296,7 +301,7 @@
 	           
 			
 				
-				\vspace*{\fill}
+				\vspace*{2.08cm}
 			\begin{center}	
 				\@ifundefined{@advisor}{}{\advisorname:\\\@advisor\\}
 				\@ifundefined{@coadvisor}{}{\coadvisorname:\\\@coadvisor\\}
