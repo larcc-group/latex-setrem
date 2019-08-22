@@ -25,8 +25,9 @@
 
 %the last appearing between [] will be set the default language
 \RequirePackage[english,brazilian]{babel}
-\input{template/brazilian.babel}
+
 \input{template/english.babel}
+\input{template/brazilian.babel}
 \if@english
     \selectlanguage{english}
     \AtBeginDocument{\selectlanguage{english}}
