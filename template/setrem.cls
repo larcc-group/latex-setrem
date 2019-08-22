@@ -24,7 +24,7 @@
 \LoadClass[12pt,onecolumn,titlepage,a4paper,openright,final]{report}[2007/10/19]
 
 %the last appearing between [] will be set the default language
-\RequirePackage[brazilian,english]{babel}
+\RequirePackage[english,brazilian]{babel}
 \input{template/brazilian.babel}
 \input{template/english.babel}
 \if@english
