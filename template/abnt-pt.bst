@@ -321,7 +321,7 @@ FUNCTION {add.to.namelist.and}
 	swap$
 	duplicate$ empty$
 		'skip$
-		{" and " *}
+		{" e " *}
 	if$
 	swap$ *
 }
