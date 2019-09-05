@@ -142,10 +142,25 @@
         \expandafter\gdef\csname @author\alph{ii@authorcount}first\endcsname{#2}
         \expandafter\gdef\csname @author\alph{ii@authorcount}\endcsname{#2 #1}
 }
-\DeclareRobustCommand{\advisor}[3][]{
+\DeclareRobustCommand{\advisora}[3][]{
         \gdef\@advisorlast{#2}
         \gdef\@advisorfirst{#3}
-        \gdef\@advisor{#1~#3 #2}
+        \gdef\@advisora{#1~#3 #2}
+}
+\DeclareRobustCommand{\advisorb}[3][]{
+        \gdef\@advisorlast{#2}
+        \gdef\@advisorfirst{#3}
+        \gdef\@advisorb{#1~#3 #2}
+}
+\DeclareRobustCommand{\advisorc}[3][]{
+        \gdef\@advisorlast{#2}
+        \gdef\@advisorfirst{#3}
+        \gdef\@advisorc{#1~#3 #2}
+}
+\DeclareRobustCommand{\advisord}[3][]{
+        \gdef\@advisorlast{#2}
+        \gdef\@advisorfirst{#3}
+        \gdef\@advisord{#1~#3 #2}
 }
 \DeclareRobustCommand{\coadvisor}[3][]{
         \gdef\@coadvisorlast{#2}
@@ -304,7 +319,10 @@
 				
 				\vspace*{2.08cm}
 			\begin{center}	
-				\@ifundefined{@advisor}{}{\advisorname:\\\@advisor\\}
+				\@ifundefined{@advisora}{}{\advisorname:\\\@advisora\\}
+                		\@ifundefined{@advisorb}{}{\\\@advisorb\\}
+				\@ifundefined{@advisorc}{}{\\\@advisorc\\}
+				\@ifundefined{@advisord}{}{\\\@advisord\\}
 				\@ifundefined{@coadvisor}{}{\coadvisorname:\\\@coadvisor\\}
 				\vspace*{\fill}
 				
