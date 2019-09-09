@@ -28,7 +28,17 @@
     abstract={Parallel programming has been a challenging task for application programmers. Stream processing is an application domain present in several scientific, enterprise, and financial areas that lack suitable abstractions to exploit parallelism. Our goal is to assess the feasibility of state-of-the-art frameworks/libraries (Pthreads, TBB, and FastFlow) and the SPar domain-specific language for real-world streaming applications (Dedup, Ferret, and Bzip2) targeting multi-core architectures. SPar was specially designed to provide high-level and productive stream parallelism abstractions, supporting programmers with standard C++-11 annotations. For the experiments, we implemented three streaming applications. We discussed SPar’s programmability advantages compared to the frameworks in terms of productivity and structured parallel programming. The results demonstrate that SPar improves productivity and provides the necessary features to achieve similar performances compared to the state-of-the-art.},
 }
 
-
+@phdthesis{GRIEBLER:PHD:16,
+	author={Dalvan Griebler},
+	title={{Domain-Specific Language \& Support Tool for High-Level Stream Parallelism}},
+	numpages={243},
+	school={Faculdade de Inform\'{a}tica - PPGCC - PUCRS},
+	address={Porto Alegre, Brazil},
+	month={June},
+	year={2016},
+	url={http://tede2.pucrs.br/tede2/handle/tede/6776},
+	abstract={Stream-based systems are representative of several application domains including video, audio, networking, graphic processing, etc. Stream programs may run on different kinds of parallel architectures (desktop, servers, cell phones, and supercomputers) and represent significant workloads on our current computing systems. Nevertheless, most of them are still not parallelized. Moreover, when new software has to be developed, programmers often face a trade-off between coding productivity, code portability, and performance. To solve this problem, we provide a new Domain-Specific Language (DSL) that naturally/on-the-fly captures and represents parallelism for stream-based applications. The aim is to offer a set of attributes (through annotations) that preserves the program's source code and is not architecture-dependent for annotating parallelism. We used the C++ attribute mechanism to design a ``\textit{de-facto}'' standard C++ embedded DSL named SPar. However, the implementation of DSLs using compiler-based tools is difficult, complicated, and usually requires a significant learning curve. This is even harder for those who are not familiar with compiler technology. Therefore, our motivation is to simplify this path for other researchers (experts in their domain) with support tools (our tool is CINCLE) to create high-level and productive DSLs through powerful and aggressive source-to-source transformations. In fact, parallel programmers can use their expertise without having to design and implement low-level code. The main goal of this thesis was to create a DSL and support tools for high-level stream parallelism in the context of a programming framework that is compiler-based and domain-oriented. Thus, we implemented SPar using CINCLE. SPar supports the software developer with productivity, performance, and code portability while CINCLE provides sufficient support to generate new DSLs. Also, SPar targets source-to-source transformation producing parallel pattern code built on top of FastFlow and MPI. Finally, we provide a full set of experiments showing that SPar provides better coding productivity without significant performance degradation in multi-core systems as well as transformation rules that are able to achieve code portability (for cluster architectures) through its generalized attributes.},
+}
 
 @misc{larcc,
 	author={LARCC},

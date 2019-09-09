@@ -1118,7 +1118,6 @@ FUNCTION {phdthesis}
 	format.author add.to.item
 	format.year add.to.item
 	#1 title format.title add.to.item
-	format.year add.to.item
 	format.totalpages add.to.item
 	str:phdthesis format.type " --- " * format.publisher *
 		add.address add.to.item
