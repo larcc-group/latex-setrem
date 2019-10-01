@@ -142,10 +142,7 @@
         \expandafter\gdef\csname @author\alph{ii@authorcount}first\endcsname{#2}
         \expandafter\gdef\csname @author\alph{ii@authorcount}\endcsname{#2 #1}
 }
-% \DeclareRobustCommand{\advisor}[3][]{
-%         \gdef\@advisorlast{#2}
-%         \gdef\@advisorfirst{#3}
-%         \gdef\@advisor{#1~#3 #2}
+
 \newcounter{ii@advisorcounter}
 \newcommand{\advisor}[3]{
         \addtocounter{ii@advisorcounter}{1}
@@ -153,6 +150,7 @@
         \expandafter\gdef\csname @advisor\alph{ii@advisorcounter}first\endcsname{#1}
         \expandafter\gdef\csname @advisor\alph{ii@advisorcounter}\endcsname{#1~#3 #2}
 }
+
 \DeclareRobustCommand{\coadvisor}[3][]{
         \gdef\@coadvisorlast{#2}
         \gdef\@coadvisorfirst{#3}
@@ -192,6 +190,19 @@
         \@ifundefined{keywj}{}{10.~\expandafter\MakeUppercase\keywj\@. }%
 }
 \newcommand{\@abstractkw}{%
+         \@ifundefined{keyenglishwa}{}{\expandafter\MakeUppercase\keyenglishwa}%
+        \@ifundefined{keyenglishwb}{}{, \keyenglishwb}%
+        \@ifundefined{keyenglishwc}{}{, \keyenglishwc}%
+        \@ifundefined{keyenglishwd}{}{, \keyenglishwd}%
+        \@ifundefined{keyenglishwe}{}{, \keyenglishwe}%
+        \@ifundefined{keyenglishwf}{}{, \keyenglishwf}%
+        \@ifundefined{keyenglishwg}{}{, \keyenglishwg}%
+        \@ifundefined{keyenglishwh}{}{, \keyenglishwh}%
+        \@ifundefined{keyenglishwi}{}{, \keyenglishwi}%
+        \@ifundefined{keyenglishwj}{}{, \keyenglishwj}%
+}
+
+\newcommand{\@palavraschave}{%
         \@ifundefined{keywa}{}{\expandafter\MakeUppercase\keywa}%
         \@ifundefined{keywb}{}{, \keywb}%
         \@ifundefined{keywc}{}{, \keywc}%
@@ -202,19 +213,6 @@
         \@ifundefined{keywh}{}{, \keywh}%
         \@ifundefined{keywi}{}{, \keywi}%
         \@ifundefined{keywj}{}{, \keywj}%
-}
-
-\newcommand{\@palavraschave}{%
-        \@ifundefined{keyenglishwa}{}{\expandafter\MakeUppercase\keyenglishwa}%
-        \@ifundefined{keyenglishwb}{}{, \keyenglishwb}%
-        \@ifundefined{keyenglishwc}{}{, \keyenglishwc}%
-        \@ifundefined{keyenglishwd}{}{, \keyenglishwd}%
-        \@ifundefined{keyenglishwe}{}{, \keyenglishwe}%
-        \@ifundefined{keyenglishwf}{}{, \keyenglishwf}%
-        \@ifundefined{keyenglishwg}{}{, \keyenglishwg}%
-        \@ifundefined{keyenglishwh}{}{, \keyenglishwh}%
-        \@ifundefined{keyenglishwi}{}{, \keyenglishwi}%
-        \@ifundefined{keyenglishwj}{}{, \keyenglishwj}%
 }
 
 %==============================================================================
@@ -254,24 +252,21 @@
 \newcommand{\thetitlepage}{%
     % \noindent{\@courseheader}
     % Header of the course
-    \noindent\raisebox{-7mm}[0pt][0pt]{\rlap{\makebox[\textwidth][c]{\@courseheader}}}
+    \noindent\raisebox{-7.5mm}[0pt][0pt]{\rlap{\makebox[\textwidth][c]{\@courseheader}}}
+    \vspace{3cm}
     \begin{center}
 				
 				
 				% Space between the authors
-				\vspace{2.63cm}
+				\vspace{1cm}
 				
 				% Authors
 				\textbf{\MakeUppercase{\@authora}}\\
 				\@ifundefined{@authorb}{}{\MakeUppercase{\textbf{\@authorb}}\\}%
-				% \@ifundefined{@authorc}{}{\MakeUppercase{\textbf{\@authorc}}\\}%
-				% \@ifundefined{@authord}{}{\MakeUppercase{\textbf{\@authord}}\\}%
-                                
-                                % two authors
-				\vspace*{6.4cm}
-                                % one author
-				% \vspace*{7.2cm}
-                                
+				%\@ifundefined{@authorc}{}{\MakeUppercase{\textbf{\@authorc}}\\}%
+				%\@ifundefined{@authord}{}{\MakeUppercase{\textbf{\@authord}}\\}%
+				\vspace*{\fill}
+				
 				% Title
 				{\textbf{\MakeUppercase{\@title}}\par}
 				\vfill
@@ -286,35 +281,36 @@
 % Cover sheet
 %==============================================================================
 \newcommand{\@makecippage}{%
-    \noindent
-    \begin{center}
-				\vspace*{0cm}
+    %\noindent
+                \begin{center}
 				\textbf{\MakeUppercase{\@authora}\\}
-				\textbf{\@ifundefined{@authorb}{}{\MakeUppercase{\@authorb}\\}}%
-				\textbf{\@ifundefined{@authorc}{}{\MakeUppercase{\@authorc}\\}}%
-				\textbf{\@ifundefined{@authord}{}{\MakeUppercase{\@authord}\\}}%
-				\vspace*{2.4cm}
+				\textbf{\@ifundefined{@authorb}{}{\MakeUppercase{\@authorb}}}%
+				%\textbf{\@ifundefined{@authorc}{}{\MakeUppercase{\@authorc}\\}}%
+				%\textbf{\@ifundefined{@authord}{}{\MakeUppercase{\@authord}\\}}%
+				\vspace*{\fill}
 				
-				\textbf{\MakeUppercase{\@title}}\\
+				\textbf{\MakeUppercase{\@title}}
 				 \end{center}
 				 
-				\vspace*{0.9cm}
+				\vspace*{\fill}
 				\begin{flushright}
 				\hspace{10cm} \begin{minipage}[t][4cm][b]{0,4\textwidth}
 				% 
-				  \singlespacing  \justifying  \small{ \noindent \@docname} \\
+				  \singlespacing  \justifying  \small{ \noindent \@docname} 
                 \end{minipage} 
 				\end{flushright}
 	           
 			
 				
-				\vspace*{2.08cm}
+				\vspace*{\fill}
 			\begin{center}	
+			
 				\@ifundefined{@advisora}{}{\advisorname:\\\@advisora\\}
-               	 		\@ifundefined{@advisorb}{}{\\\@advisorb\\}
-				\@ifundefined{@advisorc}{}{\\\@advisorc\\}
-				\@ifundefined{@advisord}{}{\\\@advisord\\}
-				\@ifundefined{@coadvisor}{}{\coadvisorname:\\\@coadvisor\\}
+                \@ifundefined{@advisorb}{}{\@advisorb\\}
+				\@ifundefined{@advisorc}{}{\@advisorc\\}
+				\@ifundefined{@advisord}{}{\@advisord}
+
+				%\@ifundefined{@coadvisor}{}{\coadvisorname:\\\@coadvisor\\}
 				\vspace*{\fill}
 				
 				% City and year
@@ -362,7 +358,6 @@
 				\@dottedtocline{1}{0em}{4em}{\textit{#1}}{\hss #2}
 		\endgroup
 }
-
 
 \newif\if@aftertoc
 \@aftertocfalse
@@ -429,13 +424,13 @@
 %==============================================================================
 \renewenvironment{abstract}{%
     \singlespacing
-    \chapter*{\abstractname}
+    \chapter*{Abstract}
     \noindent
     
 }{
     \par
     \noindent
-    \textbf{\keywordsname:} \@abstractkw.
+    \textbf{Key Words:} \@abstractkw.
 }
 
 \newenvironment{resumo}[2]{%
@@ -443,7 +438,7 @@
     \if@openright\cleardoublepage\else\clearpage\fi%
     % \gdef\@englishkeywords{#2}%
     \begin{otherlanguage}{brazilian}
-    \chapter*{\abstractname}
+    \chapter*{Resumo}
     \noindent
 }{
     \par
@@ -516,18 +511,44 @@
         \reset@font\centerline{\ii@chapterfont\sffamily\textbf{\MakeUppercase{#1}}}
         \addvspace{18pt}
 }
+
+\iffalse
+\renewcommand\appendix{\par
+  \setcounter{chapter}{0}%
+  \setcounter{section}{0}%
+  \gdef\@chapapp{\appendixname}%
+  % XXX
+  \gdef\@chapupp{\expandafter\MakeTextUppercase\expandafter{\appendixname}}%
+  %\gdef\thechapter{\expandafter\MakeTextUppercase\expandafter{\appendixname}\nobreakspace\@Alph\c@chapter}%
+  \gdef\thechapter{\@Alph\c@chapter}%
+  \gdef\PP@chaptertypeout{\@chapupp\space}%
+  \gdef\PP@chapternumberline{}%
+  \gdef\PP@chapterfmt##1{\@chapupp\nobreakspace\thechapter\nobreakspace--\nobreakspace\protect\normalfont##1}%
+  \gdef\PP@chapterfmtnodepth##1{##1}%
+
+  \gdef\@makechapterhead##1{%
+    {\parindent\z@
+      \centering
+      \normalfont
+      \interlinepenalty\@M
+      \large\bfseries\MakeTextUppercase{##1}\par\nointerlineskip\nobreak
+      \normalfont\normalsize
+      \vskip 6ex
+    }}%
+}
+\fi
+
 \renewcommand{\appendix}[1][\appendixname]{%
-        \setcounter{chapter}{1}%
-        \renewcommand{\thechapter}{\Alph{chapter}}%
-        \setcounter{tocdepth}{1}%
+        \setcounter{chapter}{0}%
+        \renewcommand{\thechapter}{}%
+        \setcounter{tocdepth}{0}%
         \@captionlistingfalse%
         \gdef\@chapapp{\MakeUppercase{#1}\space}%
-        \addtocontents{toc}{%
-          \settowidth{\ii@chapnumindent}{{\sffamily\textbf{\@chapapp}}}
-          \addtolength{\ii@chapnumindent}{1.8em}
-        }%
+
 }
 \newcommand{\annex}{\appendix[\annexname]}
+
+
 
 %==============================================================================
 % Section format
@@ -604,7 +625,9 @@
 \newcommand{\source}[1]{
         \flushleft{
     		\@setfontsize\normalsize{10pt}{20}
+    		\vspace{-10pt}
             {Fonte:} #1
+            \vspace{-15pt}
         }
 }
 
