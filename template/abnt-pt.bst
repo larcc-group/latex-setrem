@@ -54,6 +54,7 @@ ENTRY
 	series
 	type
 	volume
+    isbn
 }
 {}
 {
@@ -713,6 +714,14 @@ FUNCTION {format.parenthised.number}
 	} if$
 }
 
+FUNCTION {format.isbn}
+{
+	isbn empty$
+		{""}
+		{"ISBN " isbn  *}
+	if$
+}
+
 %==============================================================================
 % As seguintes funcoes adicionam um item a uma lista passada na pilha.
 %==============================================================================
@@ -729,6 +738,7 @@ FUNCTION {add.pages} {format.pages add.to.list}
 FUNCTION {add.note} {format.note add.to.list}
 FUNCTION {add.month.year} {format.month.year add.to.list}
 FUNCTION {add.howpublished} {format.howpublished add.to.list}
+FUNCTION {add.isbn} {format.isbn add.to.list}
 
 %==============================================================================
 % Converte virgula para dois-pontos; usado na formatacao do publisher de
@@ -991,6 +1001,7 @@ FUNCTION {book}
 	format.edition add.to.item
 	format.publication add.to.item
 	format.complementary.data.with.totalpages add.to.item
+    format.isbn add.to.item
 	format.note add.to.item
 
 	write.item
@@ -1118,6 +1129,7 @@ FUNCTION {phdthesis}
 	format.author add.to.item
 	format.year add.to.item
 	#1 title format.title add.to.item
+	format.year add.to.item
 	format.totalpages add.to.item
 	str:phdthesis format.type " --- " * format.publisher *
 		add.address add.to.item
