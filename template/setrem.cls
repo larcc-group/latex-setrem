@@ -41,28 +41,11 @@
 \RequirePackage{ragged2e}
 
 
-%%% These lines test for star and number of arguments 
-%%% and call the workhorses below
-%
-% Test for star (mid-sentence and start-sentence forms)
-\def\citep{\citepnostar}
 
-%
-% No star found. Now test for argument count.
-\def\citepnostar%
-    {\@ifnextchar[{\squarecitep}{\simplecitep}}
-\def\squarecitep[#1]%
-    {\@ifnextchar[{\twocitep[#1]}{\onecitep[#1]}}
+\DeclareRobustCommand\citep
+   {\begingroup\NAT@swatrue\let\NAT@ctype\z@\NAT@partrue
+         \@ifstar{\NAT@fulltrue\NAT@citetp}{\NAT@fullfalse\NAT@citetp}}
 
-%%% The following actually do the \cite work
-%
-% The \citep cases (no arg, one arg, and two args)
-\def\simplecitep#1%
-    {\Citep*{#1}}
-\def\onecitep[#1]#2%
-    {\Citep*[#1]{#2}}
-\def\twocitep[#1][#2]#3%
-    {(\Citeauthor*{#3}, \citeyear[#1][#2]{#3})}
 
 
 %==============================================================================
@@ -701,5 +684,5 @@
 \captionsetup[listing]{font={bf}}
 
 
- 
+
 
