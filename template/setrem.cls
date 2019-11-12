@@ -699,7 +699,7 @@
 % Figuras em negrito conforme a metodologia da SETREM
 \captionsetup[figure]{font= {small,bf},skip=0pt}  
 \captionsetup[longtable]{font={small, bf}}
-\captionsetup[table]{font={bf}}
+\captionsetup[table]{font={small, bf}}
 \captionsetup[listing]{font={bf}}
 
 
