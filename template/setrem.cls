@@ -481,11 +481,9 @@
         
 }
 \def\@makechapterhead#1{%
-        \vspace*{3.2cm}
+       \vspace*{3.2cm}
         \reset@font\noindent{
-        		\ii@chapterfont\sffamily\textbf{
-        				\MakeUppercase{}\thechapter\hspace{1em}\MakeUppercase{#1}
-        		}\par
+        	\ii@chapterfont\sffamily\textbf{\hspace{-0.2em}\MakeUppercase\thechapter\hspace{1em}\MakeUppercase{#1}}\par
         }
         %\addvspace{42pt}
 }
