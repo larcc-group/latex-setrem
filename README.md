@@ -1,38 +1,43 @@
 # LaTeX SETREM
 
-Este repositório é uma iniciativa para auxiliar na edição de texto no formato Latex. Uma ferramenta muito mais prática e científicia para a elaboração de monografias.
+Repositório com template padrão SETREM para escrita de monografias em Latex. 
 
-O repositório possui um template LaTeX seguindo os padrões da SETREM. As intruções estão logo abaixo.
+# Direitos Autorais do LARCC
 
-# Direitos do LARCC
+O repositório deste template é mantido e foi desenvolvido pelo [LARCC](http://larcc.setrem.com.br), o qual possui os direitos reservados.
 
-O repositório é mantido pelo [LARCC](http://larcc.setrem.com.br) e os direitos do repositório são reservados ao LARCC. Favor usar as Issues para reportar eventuais problemas. A equipe do LARCC está disponível para auxiliar e melhorar questões relativas ao código da template.
+# Contrbua você também
+
+	- Use as Issues para reportar eventuais problemas.
+	- Faça pull requests para melhorias no código fonte. 
 
 # Contato
 
 Acesse a página de contato do LARCC [aqui](http://larcc.setrem.com.br/en/contact/).
 
-# Como compilar os códigos em uma máquina linux?
+# Como compilar os códigos no Linux
 
-- Instalar o [Visual Studio Code](https://code.visualstudio.com/).
-- Instalar a extensão [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) para o Visual Studio Code.
-- Instalar o [TeX Live](https://tug.org/texlive/).
-- Baixar o projeto [aqui](https://github.com/larcc-group/latex-setrem/archive/master.zip) e extrair em alguma pasta.
-- Abrir a pasta extraída no Visual Studio Code.
-- Abrir o arquivo `main.tex` e editar.
-- Ao salvar o arquivo, o projeto é compilado automaticamente.
+## Usando Visual Studio Code
 
-no Linux **Ubuntu**
+	- Instalar o [Visual Studio Code](https://code.visualstudio.com/).
+	- Instalar a extensão [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) para o Visual Studio Code.
+	- Instalar o [TeX Live](https://tug.org/texlive/).
+	- Baixar o projeto [aqui](https://github.com/larcc-group/latex-setrem/archive/master.zip) e extrair em alguma pasta.
+	- Abrir a pasta extraída no Visual Studio Code.
+	- Abrir o arquivo `main.tex` e editar.
+	- Ao salvar o arquivo, o projeto é compilado automaticamente.
 
-- Execute o seguinte comando no terminal para instalar o [TeX Live](https://tug.org/texlive/) `sudo apt install texlive-full`.
-- Baixar o projeto [aqui](https://github.com/larcc-group/latex-setrem/archive/master.zip) e extrair em alguma pasta.
-- Abrir e edite o arquivo `main.tex`.
-- Execute o comando `make` pelo terminal dentro da pasta extraída.
+## Usando linha de comando no **Ubuntu**
 
-# Como usar este projeto no Overleaf?
+	- Execute o seguinte comando no terminal para instalar o [TeX Live](https://tug.org/texlive/) `sudo apt install texlive-full`.
+	- Baixar o projeto [aqui](https://github.com/larcc-group/latex-setrem/archive/master.zip) e extrair em alguma pasta.
+	- Abrir e edite o arquivo `main.tex`.
+	- Execute o comando `make` pelo terminal dentro da pasta extraída.
 
-- Baixar o projeto [aqui](https://github.com/larcc-group/latex-setrem/archive/master.zip).
-- Acessar [Overleaf](https://www.overleaf.com) e fazer login.
-- Clicar em `Novo Projeto` e selecionar a opção `Upload Projeto`.
-- Selecionar o arquivo do projeto baixado.
-- Clique no botão compilar.
+# Compilando este projeto no Overleaf
+
+	- Baixar o projeto [aqui](https://github.com/larcc-group/latex-setrem/archive/master.zip).
+	- Acessar [Overleaf](https://www.overleaf.com) e fazer login.
+	- Clicar em `Novo Projeto` e selecionar a opção `Upload Projeto`.
+	- Selecionar o arquivo do projeto baixado.
+	- Clique no botão compilar.
