@@ -42,3 +42,7 @@ Acesse a página de contato do LARCC [aqui](http://larcc.setrem.com.br/en/contac
 - Clicar em `Novo Projeto` e selecionar a opção `Upload Projeto`.
 - Selecionar o arquivo do projeto baixado.
 - Clique no botão compilar.
+
+# Mantendo o template da sua monografia atualizado
+
+Sabendo que melhorias são contínuas e problemas podem surgir, é importante manter o template do seu projeto atualizado. Para isso, você só precisa substituir os arquivos da pasta `template` do seu projeto em andamento pelos arquivos da pasta [template](https://github.com/larcc-group/latex-setrem/tree/master/template) do nosso projeto neste repositório.
