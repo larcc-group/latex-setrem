@@ -8,8 +8,8 @@ O repositório deste template é mantido e foi desenvolvido pelo [LARCC](http://
 
 # Contribua você também
 
-	- Use as Issues [issues](https://github.com/larcc-group/latex-setrem/issues) para reportar eventuais problemas.
-	- Faça pull requests para melhorias no código fonte. 
+Use as [Issues](https://github.com/larcc-group/latex-setrem/issues) para reportar eventuais problemas.
+Faça pull requests para melhorias no código fonte. 
 
 # Contato
 
