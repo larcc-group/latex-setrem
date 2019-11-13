@@ -6,9 +6,9 @@ Repositório com template padrão SETREM para escrita de monografias em Latex.
 
 O repositório deste template é mantido e foi desenvolvido pelo [LARCC](http://larcc.setrem.com.br), o qual possui os direitos reservados.
 
-# Contrbua você também
+# Contribua você também
 
-	- Use as Issues para reportar eventuais problemas.
+	- Use as Issues [issues](https://github.com/larcc-group/latex-setrem/issues) para reportar eventuais problemas.
 	- Faça pull requests para melhorias no código fonte. 
 
 # Contato
