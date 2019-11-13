@@ -16,7 +16,7 @@ Faça pull requests para melhorias no código fonte.
 
 Acesse a página de contato do LARCC [aqui](http://larcc.setrem.com.br/en/contact/).
 
-# Como compilar os códigos no Linux
+# Compilando o projeto no Linux
 
 ## Usando Visual Studio Code
 
@@ -35,7 +35,7 @@ Acesse a página de contato do LARCC [aqui](http://larcc.setrem.com.br/en/contac
 - Abrir e edite o arquivo `main.tex`.
 - Execute o comando `make` pelo terminal dentro da pasta extraída.
 
-# Compilando este projeto no Overleaf
+# Compilando o projeto no Overleaf
 
 - Baixar o projeto [aqui](https://github.com/larcc-group/latex-setrem/archive/master.zip).
 - Acessar [Overleaf](https://www.overleaf.com) e fazer login.
