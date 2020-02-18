@@ -675,6 +675,7 @@
 %==============================================================================
 % Adjusting citation format and references
 %==============================================================================
+%to remove the indent at references, uncomment this line
 %\setlength{\bibhang}{0pt}
 %\let\cite\citep
 
