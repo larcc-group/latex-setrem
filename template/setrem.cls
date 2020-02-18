@@ -347,7 +347,10 @@
 
 \renewcommand{\tableofcontents}{%
         \chapter*{\contentsname}
-        \@starttoc{toc}\@aftertoctrue%
+        \pagestyle{empty}
+        {
+                \@starttoc{toc}\@aftertoctrue%
+        }
 }
 
 % \renewcommand\listoffigures{%
