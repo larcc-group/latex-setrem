@@ -973,7 +973,7 @@ FUNCTION {format.complementary.data.with.page.range}
 FUNCTION {format.proceedings.booktitle}
 {
 	process.proceedings.booktitle "" swap$ add.address add.to.item
-	swap$ "{\ldots}" * emphasize " " swap$ * *
+	swap$ "." * emphasize " " swap$ * *
 }
 
 %==============================================================================
