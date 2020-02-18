@@ -353,6 +353,15 @@
         }
 }
 
+\renewcommand\listoffigures{%
+        % \addcontentsline{lof}{figure}{\figurename #1 }
+        \chapter*{\listfigurename}
+        \pagestyle{empty}
+        {
+                \@starttoc{lof}
+        }
+}
+
 % \renewcommand\listoffigures{%
 %         \addcontentsline{lof}{figure}{\figurename #1 }
 %         \chapter*{\listfigurename
