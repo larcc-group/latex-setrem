@@ -169,6 +169,14 @@
   {}
   {\titlerule*[.5pc]{.}\contentspage}
 
+\contentsuse{lstlisting}{lol}
+\titlecontents{lstlisting}
+    [0em]
+    {}
+    {\lstlistingname\enspace\thecontentslabel:\enspace\enspace}
+    {}
+    {\titlerule*[.5pc]{.}\contentspage}
+
 \begin{document}
 
 
@@ -213,6 +221,8 @@
   \listoftables
 \end{singlespaced}
 
+\renewcommand*{\lstlistlistingname}{LISTA DE CÓDIGOS}
+\lstlistoflistings
 
 % \listofmyequations
 
