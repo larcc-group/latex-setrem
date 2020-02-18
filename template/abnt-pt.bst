@@ -254,6 +254,11 @@ FUNCTION {emphasize}
 	"\textbf{" swap$ * "}" *
 }
 
+FUNCTION {misc.online}
+{
+	"[\textit{" swap$ * "}]" *
+}
+
 %==============================================================================
 % Adiciona um texto (se nao-empty$) ja' formatado ao item, separando-o por
 % ponto.
@@ -293,7 +298,7 @@ FUNCTION {add.to.list}
 			swap$
 			duplicate$ empty$
 				'skip$
-				{", " *}
+				{" " *}
 			if$
 			swap$ *
 		}
@@ -413,7 +418,7 @@ FUNCTION {format.family.names}
 					names swap$ add.to.namelist.comma
 				} if$
 			}{
-				names swap$ add.to.namelist.and
+				names swap$ add.to.namelist
 			} if$
 			
 			
@@ -653,7 +658,8 @@ FUNCTION {format.pages}
 {
 	pages empty$
 		{""}
-		{"pp " get.adjusted.pages *}
+		{"p " get.adjusted.pages *}
+		%{"pp " get.adjusted.pages *}
 	if$
 }
 
@@ -661,7 +667,8 @@ FUNCTION {format.totalpages}
 {
 	pages empty$
 		{""}
-		{pages "pp " *}
+		{"p. " pages *}
+		%{pages "pp " *}
 	if$
 }
 
@@ -738,6 +745,7 @@ FUNCTION {add.pages} {format.pages add.to.list}
 FUNCTION {add.note} {format.note add.to.list}
 FUNCTION {add.month.year} {format.month.year add.to.list}
 FUNCTION {add.howpublished} {format.howpublished add.to.list}
+FUNCTION {add.online} {"Online" misc.online}
 FUNCTION {add.isbn} {format.isbn add.to.list}
 
 %==============================================================================
@@ -1113,11 +1121,12 @@ FUNCTION {misc}
 			if$
 		}
 	if$
+	add.online add.to.item
 	note empty$ {
 		format.misc.publication add.to.item
 		format.complementary.data.with.totalpages add.to.item
 	}{
-		format.note add.howpublished add.to.item
+		add.howpublished format.note add.to.item
 	} if$
 
 	write.item

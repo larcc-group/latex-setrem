@@ -678,6 +678,20 @@
 %\setlength{\bibhang}{0pt}
 %\let\cite\citep
 
+\def\citep{\citepnostar}
+
+\def\citepnostar%
+    {\@ifnextchar[{\squarecitep}{\simplecitep}}
+\def\squarecitep[#1]%
+    {\@ifnextchar[{\twocitep[#1]}{\onecitep[#1]}}
+
+\def\simplecitep#1%
+    {\Citep*{#1}}
+\def\onecitep[#1]#2%
+    {\Citep*[#1]{#2}}
+\def\twocitep[#1][#2]#3%
+    {(\Citeauthor*{#3}, \citeyear[#1][#2]{#3})}
+
 %
 \newcommand{\cip}{}
 \newenvironment{dedicatoria}{%
