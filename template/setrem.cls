@@ -358,6 +358,8 @@
         \chapter*{\listfigurename}
         \pagestyle{empty}
         {
+                % uncomment this line to merge list of figures and list of tables
+                % \@starttoc{lot}
                 \@starttoc{lof}
         }
 }
