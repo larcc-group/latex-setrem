@@ -134,10 +134,12 @@
         \expandafter\gdef\csname @advisor\alph{ii@advisorcounter}\endcsname{#1~#3 #2}
 }
 
-\DeclareRobustCommand{\coadvisor}[3][]{
-        \gdef\@coadvisorlast{#2}
-        \gdef\@coadvisorfirst{#3}
-        \gdef\@coadvisor{#1~#3 #2}
+\newcounter{ii@coadvisorcounter}
+\newcommand{\coadvisor}[3]{
+        \addtocounter{ii@coadvisorcounter}{1}
+        \expandafter\gdef\csname @coadvisor\alph{ii@coadvisorcounter}last\endcsname{#2}
+        \expandafter\gdef\csname @coadvisor\alph{ii@coadvisorcounter}first\endcsname{#1}
+        \expandafter\gdef\csname @coadvisor\alph{ii@coadvisorcounter}\endcsname{#1~#3 #2}
 }
 
 %==============================================================================
@@ -263,43 +265,37 @@
 %==============================================================================
 % Cover sheet
 %==============================================================================
-\newcommand{\@makecippage}{%
-    %\noindent
-                \begin{center}
-				\textbf{\MakeUppercase{\@authora}\\}
-				\textbf{\@ifundefined{@authorb}{}{\MakeUppercase{\@authorb}}}%
-				%\textbf{\@ifundefined{@authorc}{}{\MakeUppercase{\@authorc}\\}}%
-				%\textbf{\@ifundefined{@authord}{}{\MakeUppercase{\@authord}\\}}%
-				\vspace*{\fill}
-				
-				\textbf{\MakeUppercase{\@title}}
-				 \end{center}
-				 
-				\vspace*{\fill}
-				\begin{flushright}
-				\hspace{10cm} \begin{minipage}[t][4cm][b]{0,4\textwidth}
-				% 
-				  \singlespacing  \justifying  \small{ \noindent \@docname} 
-                \end{minipage} 
-				\end{flushright}
-	           
-			
-				
-				\vspace*{\fill}
-			\begin{center}	
-			
-				\@ifundefined{@advisora}{}{\advisorname:\\\@advisora\\}
-                \@ifundefined{@advisorb}{}{\@advisorb\\}
-				\@ifundefined{@advisorc}{}{\@advisorc\\}
-				\@ifundefined{@advisord}{}{\@advisord}
+\newcommand{\@makecippage}{
+        \begin{center}
+                \textbf{\MakeUppercase{\@authora}\\}
+                \textbf{\@ifundefined{@authorb}{}{\MakeUppercase{\@authorb}}}
+                \vspace*{\fill}
+                \textbf{\MakeUppercase{\@title}}
+        \end{center}
+                                
+        \vspace*{\fill}
+        \begin{flushright}
+                \hspace{10cm}
+                \begin{minipage}[t][4cm][b]{0,4\textwidth}
+                        \singlespacing
+                        \justifying
+                        \small{\noindent\@docname} 
+                \end{minipage}
+        \end{flushright}
 
-				%\@ifundefined{@coadvisor}{}{\coadvisorname:\\\@coadvisor\\}
-				\vspace*{\fill}
-				
-				% City and year
-				\textbf{\@city\\}
-				\textbf{\@publyear}
-	  \end{center}
+        \vspace*{\fill}
+        \begin{center}	
+                \@ifundefined{@advisora}{}{\advisorname:\\\@advisora\\}
+                \@ifundefined{@advisorb}{}{\@advisorb\\}
+                \@ifundefined{@advisorc}{}{\@advisorc\\}
+                \@ifundefined{@advisord}{}{\@advisord}
+
+                \@ifundefined{@coadvisora}{}{\coadvisorname:\\\@coadvisora\\}
+                \@ifundefined{@coadvisorb}{}{\@coadvisorb\\}
+                \vspace*{\fill}
+                \textbf{\@city\\}
+                \textbf{\@publyear}
+        \end{center}
 }
 
 %==============================================================================
