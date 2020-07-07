@@ -2,9 +2,11 @@
 
 Repositório com template padrão SETREM para escrita de monografias em LaTeX. 
 
+
 # Direitos autorais do LARCC
 
 O repositório deste template foi desenvolvido e é mantido pelo [LARCC](http://larcc.setrem.com.br), o qual possui os direitos reservados.
+
 
 # Contribua você também
 
@@ -12,9 +14,11 @@ Use as [Issues](https://github.com/larcc-group/latex-setrem/issues) para reporta
 
 Faça pull requests para melhorias no código fonte. 
 
+
 # Contato
 
 Acesse a página de contato do LARCC [aqui](http://larcc.setrem.com.br/en/contact/).
+
 
 # Compilando o projeto no Linux
 
@@ -28,6 +32,7 @@ Acesse a página de contato do LARCC [aqui](http://larcc.setrem.com.br/en/contac
 - Abrir o arquivo `main.tex` e editar;
 - Ao salvar o arquivo, o projeto é compilado automaticamente.
 
+
 ## Usando linha de comando no **Ubuntu**
 
 - Executar o seguinte comando no terminal para instalar o [TeX Live](https://tug.org/texlive/):
@@ -35,6 +40,7 @@ Acesse a página de contato do LARCC [aqui](http://larcc.setrem.com.br/en/contac
 - Baixar o projeto [aqui](https://github.com/larcc-group/latex-setrem/archive/master.zip) e fazer a extração em alguma pasta;
 - Abrir e editar o arquivo `main.tex`;
 - Executar o comando `make` pelo terminal dentro da pasta extraída.
+
 
 # Compilando o projeto no Overleaf
 
@@ -44,9 +50,30 @@ Acesse a página de contato do LARCC [aqui](http://larcc.setrem.com.br/en/contac
 - Selecionar o arquivo do projeto baixado;
 - Clicar no botão compilar.
 
+
+# Alterando o cabeçalho do curso
+
+Para alterar o cabeçalho do curso no PDF, substitua a tag `\sistemasinformacaologo` por uma das opções abaixo:
+
+- Sistemas de Informação: `\sistemasinformacaologo`;
+- Engenharia da Computação: `\engenhariacomputacaologo`;
+- Engenharia da Produção: `\engenhariaproducaologo`;
+- Administração: `\administracaologo`;
+- Agronomia: `\agronomialogo`;
+- Enfermagem: `\enfermagemlogo`;
+- Direito: `\direitologo`;
+- Pedagogia: `\pedagogialogo`;
+- Psicologia: `\psicologialogo`;
+- Técnico em Informática: `\ctilogo`;
+- Técnico em Enfermagem: `\ctelogo`;
+- Técnico em Comunicação Visual: `\ctcvlogo`;
+- Técnico em Agropecuária: `\ctalogo`;
+
+
 # Mantendo o template da sua monografia atualizado
 
 Sabendo que melhorias são contínuas e problemas podem surgir. Portanto, é importante manter o template do seu projeto atualizado. Para isso, você só precisa substituir os arquivos da pasta `template` do seu projeto em andamento pelos arquivos da pasta [template](https://github.com/larcc-group/latex-setrem/tree/master/template) do nosso projeto neste repositório.
+
 
 # Materiais de ajuda
 
