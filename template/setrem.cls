@@ -265,14 +265,16 @@
 %==============================================================================
 % Cover sheet
 %==============================================================================
-\newcommand{\@makecippage}{
-        \begin{center}
+\newcommand{\@makecippage}{%
+         \begin{center}
                 \textbf{\MakeUppercase{\@authora}\\}
-                \textbf{\@ifundefined{@authorb}{}{\MakeUppercase{\@authorb}}}
+                \textbf{\@ifundefined{@authorb}{}{\MakeUppercase{\@authorb}}}%
+                %\textbf{\@ifundefined{@authorc}{}{\MakeUppercase{\@authorc}\\}}%
+                %\textbf{\@ifundefined{@authord}{}{\MakeUppercase{\@authord}\\}}%
                 \vspace*{\fill}
+                
                 \textbf{\MakeUppercase{\@title}}
         \end{center}
-                                
         \vspace*{\fill}
         \begin{flushright}
                 \hspace{10cm}
@@ -282,7 +284,6 @@
                         \small{\noindent\@docname} 
                 \end{minipage}
         \end{flushright}
-
         \vspace*{\fill}
         \begin{center}	
                 \@ifundefined{@advisora}{}{\advisorname:\\\@advisora\\}
