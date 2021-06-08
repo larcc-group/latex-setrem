@@ -1,0 +1,15 @@
+version: "3.3"
+
+services:
+  machine:
+    image: claudioscheer/latex
+    container_name: latex-setrem
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/home
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    working_dir: /home
+    environment:
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
