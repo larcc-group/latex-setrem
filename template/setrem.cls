@@ -85,7 +85,7 @@
 % 1cm after paging
 % 3cm in total
 \setlength{\headsep}{1cm}
-        
+
 % the rest will be zero
 \setlength{\headheight}{0cm}
 \setlength{\footskip}{0cm}
@@ -176,28 +176,28 @@
 }
 \newcommand{\@abstractkw}{%
          \@ifundefined{keyenglishwa}{}{\expandafter\MakeUppercase\keyenglishwa}%
-        \@ifundefined{keyenglishwb}{}{, \keyenglishwb}%
-        \@ifundefined{keyenglishwc}{}{, \keyenglishwc}%
-        \@ifundefined{keyenglishwd}{}{, \keyenglishwd}%
-        \@ifundefined{keyenglishwe}{}{, \keyenglishwe}%
-        \@ifundefined{keyenglishwf}{}{, \keyenglishwf}%
-        \@ifundefined{keyenglishwg}{}{, \keyenglishwg}%
-        \@ifundefined{keyenglishwh}{}{, \keyenglishwh}%
-        \@ifundefined{keyenglishwi}{}{, \keyenglishwi}%
-        \@ifundefined{keyenglishwj}{}{, \keyenglishwj}%
+        \@ifundefined{keyenglishwb}{}{. \keyenglishwb}%
+        \@ifundefined{keyenglishwc}{}{. \keyenglishwc}%
+        \@ifundefined{keyenglishwd}{}{. \keyenglishwd}%
+        \@ifundefined{keyenglishwe}{}{. \keyenglishwe}%
+        \@ifundefined{keyenglishwf}{}{. \keyenglishwf}%
+        \@ifundefined{keyenglishwg}{}{. \keyenglishwg}%
+        \@ifundefined{keyenglishwh}{}{. \keyenglishwh}%
+        \@ifundefined{keyenglishwi}{}{. \keyenglishwi}%
+        \@ifundefined{keyenglishwj}{}{. \keyenglishwj}%
 }
 
 \newcommand{\@palavraschave}{%
         \@ifundefined{keywa}{}{\expandafter\MakeUppercase\keywa}%
-        \@ifundefined{keywb}{}{, \keywb}%
-        \@ifundefined{keywc}{}{, \keywc}%
-        \@ifundefined{keywd}{}{, \keywd}%
-        \@ifundefined{keywe}{}{, \keywe}%
-        \@ifundefined{keywf}{}{, \keywf}%
-        \@ifundefined{keywg}{}{, \keywg}%
-        \@ifundefined{keywh}{}{, \keywh}%
-        \@ifundefined{keywi}{}{, \keywi}%
-        \@ifundefined{keywj}{}{, \keywj}%
+        \@ifundefined{keywb}{}{. \keywb}%
+        \@ifundefined{keywc}{}{. \keywc}%
+        \@ifundefined{keywd}{}{. \keywd}%
+        \@ifundefined{keywe}{}{. \keywe}%
+        \@ifundefined{keywf}{}{. \keywf}%
+        \@ifundefined{keywg}{}{. \keywg}%
+        \@ifundefined{keywh}{}{. \keywh}%
+        \@ifundefined{keywi}{}{. \keywi}%
+        \@ifundefined{keywj}{}{. \keywj}%
 }
 
 %==============================================================================
@@ -240,22 +240,22 @@
     \noindent\raisebox{-7.5mm}[0pt][0pt]{\rlap{\makebox[\textwidth][c]{\@courseheader}}}
     \vspace{3cm}
     \begin{center}
-				
-				
+
+
 				% Space between the authors
 				\vspace{1cm}
-				
+
 				% Authors
 				\textbf{\MakeUppercase{\@authora}}\\
 				\@ifundefined{@authorb}{}{\MakeUppercase{\textbf{\@authorb}}\\}%
 				%\@ifundefined{@authorc}{}{\MakeUppercase{\textbf{\@authorc}}\\}%
 				%\@ifundefined{@authord}{}{\MakeUppercase{\textbf{\@authord}}\\}%
 				\vspace*{\fill}
-				
+
 				% Title
 				{\textbf{\MakeUppercase{\@title}}\par}
 				\vfill
-				
+
 				% City and year
 				\centerline{\textbf{\@city}}
 				\centerline{\textbf{\@publyear}}
@@ -272,7 +272,7 @@
                 %\textbf{\@ifundefined{@authorc}{}{\MakeUppercase{\@authorc}\\}}%
                 %\textbf{\@ifundefined{@authord}{}{\MakeUppercase{\@authord}\\}}%
                 \vspace*{\fill}
-                
+
                 \textbf{\MakeUppercase{\@title}}
         \end{center}
         \vspace*{\fill}
@@ -281,11 +281,11 @@
                 \begin{minipage}[t][4cm][b]{0,4\textwidth}
                         \singlespacing
                         \justifying
-                        \small{\noindent\@docname} 
+                        \small{\noindent\@docname}
                 \end{minipage}
         \end{flushright}
         \vspace*{\fill}
-        \begin{center}	
+        \begin{center}
                 \@ifundefined{@advisora}{}{\advisorname:\\\@advisora\\}
                 \@ifundefined{@advisorb}{}{\@advisorb\\}
                 \@ifundefined{@advisorc}{}{\@advisorc\\}
@@ -420,7 +420,7 @@
     \singlespacing
     \chapter*{Abstract}
     \noindent
-    
+
 }{
     \par
     \noindent
@@ -445,7 +445,7 @@
 \newenvironment{introduction}{%
     \chapter*{\introductionname}
 }{
-    
+
 }
 
 
@@ -464,15 +464,15 @@
         \addcontentsline{toc}{chapter}{\thechapter\ \ #1}%
        % \addtocontents{lof}{\protect\addvspace{10\p@}}%
         %\addtocontents{lot}{\protect\addvspace{10\p@}}%
-        
-       
+
+
         \thispagestyle{empty}
-        
+
         \@makechapterhead{#2}
         \@afterheading
-        
+
         \pagestyle{setrem}\let\ps@plain\ps@setrem%
-        
+
 }
 \def\@makechapterhead#1{%
        \vspace*{3.2cm}
@@ -483,18 +483,18 @@
 }
 
 \def\@schapter#1{%
-		
+
         \if@aftertoc\addcontentsline{toc}{chapter}{#1}\fi%
-        
+
         %\addtocontents{lof}{\protect\addvspace{10\p@}}%
         %\addtocontents{lot}{\protect\addvspace{10\p@}}%
-        
+
 
         \thispagestyle{empty}
-        
+
         \@makeschapterhead{#1}
         \@afterheading
-        
+
 
         \pagestyle{setrem}\let\ps@plain\ps@setrem%
 }
@@ -545,17 +545,17 @@
 %==============================================================================
 % Section format
 %
-% \@startsection {NAME}{LEVEL}{INDENT}{BEFORESKIP}{AFTERSKIP}{STYLE} 
+% \@startsection {NAME}{LEVEL}{INDENT}{BEFORESKIP}{AFTERSKIP}{STYLE}
 %            optional * [ALTHEADING]{HEADING}
-%    Generic command to start a section.  
+%    Generic command to start a section.
 %    NAME       : e.g., 'subsection'
 %    LEVEL      : a number, denoting depth of section -- e.g., chapter=1,
 %                 section = 2, etc.  A section number will be printed if
 %                 and only if LEVEL < or = the value of the secnumdepth
 %                 counter.
 %    INDENT     : Indentation of heading from left margin
-%    BEFORESKIP : Absolute value = skip to leave above the heading.  
-%                 If negative, then paragraph indent of text following 
+%    BEFORESKIP : Absolute value = skip to leave above the heading.
+%                 If negative, then paragraph indent of text following
 %                 heading is suppressed.
 %    AFTERSKIP  : if positive, then skip to leave below heading,
 %                       else - skip to leave to right of run-in heading.
@@ -598,7 +598,7 @@
  \long\def\@caption#1[#2]#3{%
    %\par
    \if@captionlisting%
-        
+
      \addcontentsline{\csname ext@#1\endcsname}{#1}%
         {\protect\numberline{\csname fnum@#1\endcsname:}{\ignorespaces #2}}%
    \fi%
@@ -704,7 +704,7 @@
 
 
 % Figuras em negrito conforme a metodologia da SETREM
-\captionsetup[figure]{font= {small,bf},skip=0pt}  
+\captionsetup[figure]{font= {small,bf},skip=0pt}
 \captionsetup[longtable]{font={small, bf}}
 \captionsetup[table]{font={small, bf}}
 \captionsetup[listing]{font={bf}}
