@@ -1,6 +1,7 @@
-# LaTeX SETREM
+# LaTeX SETREM - ABNTEX2
 
 Repositório com template padrão SETREM para escrita de monografias em LaTeX. 
+O template usa como base o ABNTEX2.
 
 
 # Direitos autorais do LARCC
@@ -50,24 +51,6 @@ Acesse a página de contato do LARCC [aqui](http://larcc.setrem.com.br/en/contac
 - Selecionar o arquivo do projeto baixado;
 - Clicar no botão compilar.
 
-
-# Alterando o cabeçalho do curso
-
-Para alterar o cabeçalho do curso no PDF, substitua a tag `\sistemasinformacaologo` por uma das opções abaixo:
-
-- Sistemas de Informação: `\sistemasinformacaologo`;
-- Engenharia da Computação: `\engenhariacomputacaologo`;
-- Engenharia da Produção: `\engenhariaproducaologo`;
-- Administração: `\administracaologo`;
-- Agronomia: `\agronomialogo`;
-- Enfermagem: `\enfermagemlogo`;
-- Direito: `\direitologo`;
-- Pedagogia: `\pedagogialogo`;
-- Psicologia: `\psicologialogo`;
-- Técnico em Informática: `\ctilogo`;
-- Técnico em Enfermagem: `\ctelogo`;
-- Técnico em Comunicação Visual: `\ctcvlogo`;
-- Técnico em Agropecuária: `\ctalogo`;
 
 
 # Mantendo o template da sua monografia atualizado

@@ -1,0 +1,240 @@
+\def\setrem{Sociedade Educacional Tr{\^e}s de Maio}
+\def\faculsetrem{Faculdade Tr{\^e}s de Maio}
+\def\ctrc{Course}
+
+%       \silogo         % tamanho normal (fonte equiv. a 10pt)
+%       \silogo[2]      % com o dobro do tamanho
+%       \silogo[.5]     % com metade do tamanho
+
+% \DeclareRobustCommand{\sistemasinformacaologo}[1][1]{
+%         \includegraphics[scale=#1]{template/logos/sistemasinformacao.png}
+% }
+
+% \DeclareRobustCommand{\engenhariaproducaologo}[1][1]{
+%         \includegraphics[scale=#1]{template/logos/engenhariaproducao.png}
+% }
+% \DeclareRobustCommand{\administracaologo}[1][1]{
+%         \includegraphics[scale=#1]{template/logos/administracao.png}
+% }
+% \DeclareRobustCommand{\agronomialogo}[1][1]{
+%         \includegraphics[scale=#1]{template/logos/agronomia.png}
+% }
+% \DeclareRobustCommand{\ctalogo}[1][1]{
+%         \includegraphics[scale=#1]{template/logos/cta.png}
+% }
+% \DeclareRobustCommand{\ctcvlogo}[1][1]{
+%         \includegraphics[scale=#1]{template/logos/ctcv.png}
+% }
+% \DeclareRobustCommand{\ctelogo}[1][1]{
+%         \includegraphics[scale=#1]{template/logos/cte.png}
+% }
+% \DeclareRobustCommand{\ctilogo}[1][1]{
+%         \includegraphics[scale=#1]{template/logos/cti.png}
+% }
+% \DeclareRobustCommand{\direitologo}[1][1]{
+%         \includegraphics[scale=#1]{template/logos/direito.png}
+% }
+% \DeclareRobustCommand{\enfermagemlogo}[1][1]{
+%         \includegraphics[scale=#1]{template/logos/enfermagem.png}
+% }
+% \DeclareRobustCommand{\pedagogialogo}[1][1]{
+%         \includegraphics[scale=#1]{template/logos/pedagogia.png}
+% }
+% \DeclareRobustCommand{\psicologialogo}[1][1]{
+%         \includegraphics[scale=#1]{template/logos/psicologia.png}
+% }
+
+\newcommand{\logopath}{template/Cabecalho-Faculdade-2025.png} % caminho do logo
+
+
+
+\renewcommand{\imprimircapa}{%
+\begin{capa}%
+% \noindent{\@courseheader}
+    % Header of the course
+    \begin{center}
+     \vspace*{-1cm} % espaço do topo
+     % ################################# Espaçamento está errado 
+    % \vspace{1cm}      
+    \includegraphics[width=\textwidth,keepaspectratio]{\logopath}
+    \vspace*{0.5cm}
+    
+		% Space between the authors
+		% \vspace*{1cm}/
+		% Authors
+		{\ABNTEXchapterfont\bfseries\normalsize\MakeUppercase\imprimirautor}
+        
+		\vspace*{7cm}
+		% Title
+        \ABNTEXchapterfont\bfseries\normalsize\MakeUppercase\imprimirtitulo
+				\vfill
+
+				% City and year
+    \centerline{\normalsize\bfseries{\imprimirlocal}}
+    \centerline{\normalsize\bfseries{\imprimirdata}}
+    \end{center}
+\end{capa}
+}
+
+\makeatletter
+\renewcommand{\folhaderostocontent}{
+    \begin{center}
+        {\ABNTEXchapterfont\normalsize\bfseries\MakeUppercase\imprimirautor}
+        \vspace*{\fill}\vspace*{\fill}
+        \begin{center}
+        \ABNTEXchapterfont\bfseries\normalsize\MakeUppercase\imprimirtitulo
+        \end{center}
+        \vspace*{\fill}
+        \abntex@ifnotempty{\imprimirpreambulo}{%
+        \hspace{.45\textwidth}
+        \begin{minipage}{.5\textwidth}
+        \SingleSpacing
+        \imprimirpreambulo
+        \end{minipage}%
+        \vspace*{\fill}
+        }%
+        % {\abntex@ifnotempty{\imprimirinstituicao}{\imprimirinstituicao
+        % \vspace*{\fill}}}
+        {\normalsize\imprimirorientadorRotulo~\imprimirorientador\par}
+        \abntex@ifnotempty{\imprimircoorientador}{%
+        {\large\imprimircoorientadorRotulo~\imprimircoorientador}%
+        }%
+        \vspace*{\fill}
+        {\normalsize\bfseries\imprimirlocal}
+        \par
+        {\normalsize\bfseries\imprimirdata}
+        \vspace*{1cm}
+    \end{center}
+}
+\makeatother
+
+\makeatletter
+\makechapterstyle{setrem}{
+  % ---------- Espaçamento (compensado pelo que o memoir soma) ----------
+  \setlength{\beforechapskip}{\dimexpr 138pt - \baselineskip - \topskip\relax}
+  \setlength{\midchapskip}{0pt}% não queremos salto vertical entre número e título
+  \setlength{\afterchapskip}{0pt}% vamos controlar explicitamente no \afterchaptertitle
+
+  % ---------- Sem “Capítulo” ----------
+  \renewcommand{\printchaptername}{}%
+  \renewcommand{\chapternamenum}{}%
+
+  % ---------- Número + título na MESMA linha (numerados) ----------
+  \renewcommand{\chapnumfont}{\normalsize\bfseries}
+  \renewcommand{\chaptitlefont}{\normalsize\bfseries}
+  \renewcommand{\printchapternum}{\chapnumfont \thechapter \thispagestyle{empty}}
+  \renewcommand{\afterchapternum}{\space}% espaço HORIZONTAL entre número e título
+  \renewcommand{\printchaptertitle}[1]{\chaptitlefont \MakeTextUppercase{##1}}
+
+  % ---------- Espaço DEPOIS do título: exatamente 18pt ----------
+  \renewcommand{\afterchaptertitle}{\par\vspace{18pt}}
+
+
+  % ---------- Capítulos NÃO numerados (pré/pós-textuais) ----------
+  % Maiúsculas, sem negrito. Remova \centering se quiser à esquerda.
+  \renewcommand{\printchapternonum}{%
+      \thispagestyle{empty}% <-- remove número da página
+
+    \centering
+    \renewcommand{\chaptitlefont}{\normalsize\normalfont\bfseries}%
+  }%
+}
+\makeatother
+
+% Ativar
+\chapterstyle{setrem}
+
+
+
+
+% \setlength{\absparindent}{0pt}
+% \setlength{\absparsep}{18pt}
+% \setlength\absleftindent{0pt}
+% \setlength\absrightindent{0pt}
+% \abstracttextfont{\normalfont\normalsize}
+% \newcommand{\abstracttextspacing}{\OnehalfSpacing}
+% %--Alinhar espaçamento caption
+%  \setlength{\belowcaptionskip}{0.2mm}
+%  \setlength{\abovecaptionskip}{0.5mm}
+%  %----
+ 
+\renewcommand{\ABNTEXsectionfontsize}{\normalsize}
+\renewcommand{\ABNTEXsubsectionfontsize}{\normalsize\bfseries} 
+\renewcommand{\ABNTEXsubsubsectionfontsize}{\normalsize\itshape} 
+\renewcommand{\ABNTEXsubsubsubsectionfontsize}{\normalsize} 
+\renewcommand{\ABNTEXchapterfont}{\normalsize}
+\renewcommand{\ABNTEXpartfontsize}{\normalsize\bfseries\MakeUppercase}
+
+% \renewcommand{\ABNTEXfontereduzida}{\footnotesize}
+\renewcommand{\ABNTEXfontereduzida}{\footnotesize} % Texto da legenda em 10pt
+\renewcommand{\tocheadstart}{\ABNTEXchapterfont\normalsize}
+
+\captionnamefont{\ABNTEXfontereduzida}
+\captiontitlefont{\ABNTEXfontereduzida}
+
+% \renewcommand{\ABNTEXsectionfontsize}{\normalsize}
+
+
+% CONFIGURACAO DO SUMARIO
+% -----------------------------------------------------------------------------
+% Modifica o espaçamento no sumário
+% Nao ha espacos, exceto para as entradas de capitulos
+
+%\renewcommand{\tocheadstart}{\ABNTEXchapterfont}
+
+\setaftersecskip{12pt}
+\setbeforesecskip{38pt}
+
+% Está 6 pois não tem antes do paragrafo
+\setaftersubsecskip{6pt}
+\setbeforesubsecskip{18pt}
+
+\setaftersubsubsecskip{6pt}
+\setbeforesubsubsecskip{18pt}
+
+
+\setlength{\cftbeforeparagraphskip}{0pt}
+\setlength{\cftbeforesubsectionskip}{0pt}
+\setlength{\cftbeforesectionskip}{0pt}
+\setlength{\cftbeforesubsubsectionskip}{0pt}
+\setlength{\cftbeforechapterskip}{0pt}
+\setlength{\cftbeforepartskip}{0pt}
+\setlength{\cftpartindent}{0em}
+\setlength{\cftpartnumwidth}{4.5em}% \renewcommand*{\cftsubsectionfont}{\itshape}
+
+% Modifica a formatacao dos textos
+
+\renewcommand{\chaptitlefont}{\normalfont\bfseries}
+\setsecheadstyle{\normalfont\bfseries}
+\setsubsecheadstyle{\normalfont\bfseries}
+\setsubsubsecheadstyle{\normalfont\bfseries}
+
+
+
+% Secao secundaria (Section) Caixa baixa, Negrito, tamanho 12
+\renewcommand{\cftsectionfont}{\normalfont\MakeUppercase} %ponha \rmfamily se quiser serifadas...
+
+% Secao terciaria (Subsection) Caixa baixa, italico, tamanho 12
+\renewcommand{\cftsubsectionfont}{\bfseries}
+
+% Secao quaternaria (Subsubsection) Caixa baixa, Negrito, sublinhado, tamanho 12
+\renewcommand{\cftsubsubsectionfont}{\itshape}
+
+% Seção quinaria (subsubsubsection) Caixa baixa, sem negrito, tamanho 12
+\renewcommand{\cftparagraphfont}{\normalfont}
+\renewcommand{\cftpartfont}{\normalfont}
+% --> Criação de estilo de pagina 
+\makepagestyle{abntheadings}
+\makeevenhead{abntheadings}{\ABNTEXfontereduzida\thepage}{}{}
+\makeoddhead{abntheadings}{}{}{\ABNTEXfontereduzida\thepage}
+% <-- Criação de estilo de pagina 
+
+% O tamanho do parágrafo, espaço entre a margem e o início da frase do parágrafo
+\setlength{\parindent}{1.25cm}
+
+%Espaçamento entre parágrafos
+\setlength{\parskip}{6pt}
+
+\setlrmarginsandblock{3cm}{2cm}{*}
+\setulmarginsandblock{3cm}{2cm}{*}
+\checkandfixthelayout
